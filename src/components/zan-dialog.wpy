@@ -42,7 +42,7 @@
   min-height: 40px;
 
   &::after {
-    @include hairline;
+    .hairline;
     border-bottom-width: 1px;
   }
 }

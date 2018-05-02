@@ -1,12 +1,7 @@
 <style lang="less">
   @import "/zanui/helper";
 .container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  box-sizing: border-box;
+
 }
 </style>
 
@@ -17,8 +12,53 @@ import 'wepy-async-function'
 export default class extends wepy.app {
   config = {
     pages: [
-      'pages/index'
+      'pages/index',
+      'pages/mine',
+      'example/dashboard',
+      'example/actionsheet',
+      'example/btn',
+      'example/badge',
+      'example/capsule',
+      'example/card',
+      'example/cell',
+      'example/dialog',
+      'example/field',
+      'example/helper',
+      'example/icon',
+      'example/layout',
+      'example/loadmore',
+      'example/noticebar',
+      'example/panel',
+      'example/popup',
+      'example/select',
+      'example/stepper',
+      'example/steps',
+      'example/switch',
+      'example/tab',
+      'example/tag',
+      'example/toptips',
+      'example/toast'
     ],
+    tabBar: {
+      color: '#dddddd',
+      selectedColor: '#3cc51f',
+      borderStyle: '#ffffff',
+      backgroundColor: '#ffffff',
+      list: [
+        {
+          pagePath: 'pages/index',
+          iconPath: 'assets/index.png',
+          selectedIconPath: 'assets/index_a.png',
+          text: '首页'
+        },
+        {
+          pagePath: 'pages/mine',
+          iconPath: 'assets/mine.png',
+          selectedIconPath: 'assets/mine_a.png',
+          text: '我的'
+        }
+      ]
+    },
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',
@@ -35,6 +75,7 @@ export default class extends wepy.app {
   constructor () {
     super()
     this.use('requestfix')
+    this.use('promisify')
   }
 
   onLaunch() {
