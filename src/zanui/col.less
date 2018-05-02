@@ -1,0 +1,11 @@
+.zan-col {
+  float: left;
+  box-sizing: border-box;
+  width: 0;
+}
+.loop(@i) when (@i > 0) {
+  .zan-col-@{i} { width: @i * 100% / 24; }
+  .zan-col-offset-@{i} { margin-left: @i * 100% / 24; }
+  .loop((@i - 1));    // 递归调用自身
+}
+.loop(24);
